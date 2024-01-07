@@ -153,7 +153,8 @@ int PHS(void *out, size_t outlen, const void *in, size_t inlen, const void *salt
     return 0;
 }
 
-void aurum_hash(const char *in, const char *out)
+void aurum_hash(const char *in, const char *out);
+        void aurum_hash(const char* input, char* output, uint32_t size)
 {
     unsigned int t_cost = 2;
     unsigned int m_cost = 8;
