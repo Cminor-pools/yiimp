@@ -15,6 +15,8 @@
 #include <immintrin.h>
 #include "aurum.h"
 
+       void aurum_hash(const char* input, char* output, uint32_t size)
+       {
 #define ADD128(x,y)       _mm_add_epi64((x), (y))   
 #define XOR128(x,y)       _mm_xor_si128((x),(y))     /*XOR(x,y) = x ^ y, where x and y are two 128-bit word*/
 #define OR128(x,y)        _mm_or_si128((x),(y))      /*OR(x,y)  = x | y, where x and y are two 128-bit word*/
@@ -153,8 +155,7 @@ int PHS(void *out, size_t outlen, const void *in, size_t inlen, const void *salt
     return 0;
 }
 
-void aurum_hash(const char *in, const char *out);
-        void aurum_hash(const char* input, char* output, uint32_t size)
+void aurum_hash(const char *in, const char *out)
 {
     unsigned int t_cost = 2;
     unsigned int m_cost = 8;
@@ -166,3 +167,6 @@ void aurum_hash(const char *in, const char *out);
     PHS(out, 32, in, 80, &nonce, 4, t_cost, m_cost);
 }
       
+
+       }
+
