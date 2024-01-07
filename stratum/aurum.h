@@ -8,7 +8,8 @@ extern "C" {
 
 #include <stdint.h>
 
-void aurum_hash(const char* input, char* output, uint32_t size);
+///void aurum_hash(const char* input, char* output, uint32_t size);
+void aurum_hash(const char* input, const char* output, uint32_t size)
 
 #ifdef __cplusplus
 }
